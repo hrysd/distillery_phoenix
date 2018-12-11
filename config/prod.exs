@@ -67,4 +67,13 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs which should be versioned
 # separately.
-import_config "prod.secret.exs"
+#import_config "prod.secret.exs"
+config :distillery_configuration, DistilleryConfigurationWeb.Endpoint,
+  secret_key_base: "tVTdNYHRh4Yjxdq8Y+wiJCl0b52rNGyflOhCHsSG/ZDzvFyGdMqmJWj2yP+Lr1G4"
+
+# Configure your database
+config :distillery_configuration, DistilleryConfiguration.Repo,
+  username: "postgres",
+  password: "",
+  database: "distillery_configuration_prod",
+  pool_size: 15
