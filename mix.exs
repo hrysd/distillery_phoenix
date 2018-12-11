@@ -20,7 +20,7 @@ defmodule DistilleryConfiguration.MixProject do
   def application do
     [
       mod: {DistilleryConfiguration.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :observer, :wx]
     ]
   end
 
