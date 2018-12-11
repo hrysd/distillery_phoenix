@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :distillery_configuration, DistilleryConfigurationWeb.Endpoint,
+config :distillery_phoenix, DistilleryPhoenixWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -48,9 +48,9 @@ config :phoenix, :stacktrace_depth, 20
 config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
-config :distillery_configuration, DistilleryConfiguration.Repo,
+config :distillery_phoenix, DistilleryPhoenix.Repo,
   username: "postgres",
   password: "",
-  database: "distillery_configuration_dev",
+  database: "distillery_phoenix_dev",
   hostname: "localhost",
   pool_size: 10

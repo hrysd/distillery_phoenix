@@ -1,6 +1,6 @@
-defmodule DistilleryConfiguration do
+defmodule DistilleryPhoenix do
   @moduledoc """
-  DistilleryConfiguration keeps the contexts that define your domain
+  DistilleryPhoenix keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

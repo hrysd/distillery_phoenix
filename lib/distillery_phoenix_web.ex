@@ -1,12 +1,12 @@
-defmodule DistilleryConfigurationWeb do
+defmodule DistilleryPhoenixWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use DistilleryConfigurationWeb, :controller
-      use DistilleryConfigurationWeb, :view
+      use DistilleryPhoenixWeb, :controller
+      use DistilleryPhoenixWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,26 +19,26 @@ defmodule DistilleryConfigurationWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: DistilleryConfigurationWeb
+      use Phoenix.Controller, namespace: DistilleryPhoenixWeb
 
       import Plug.Conn
-      import DistilleryConfigurationWeb.Gettext
-      alias DistilleryConfigurationWeb.Router.Helpers, as: Routes
+      import DistilleryPhoenixWeb.Gettext
+      alias DistilleryPhoenixWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/distillery_configuration_web/templates",
-        namespace: DistilleryConfigurationWeb
+        root: "lib/distillery_phoenix_web/templates",
+        namespace: DistilleryPhoenixWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
 
-      import DistilleryConfigurationWeb.ErrorHelpers
-      import DistilleryConfigurationWeb.Gettext
-      alias DistilleryConfigurationWeb.Router.Helpers, as: Routes
+      import DistilleryPhoenixWeb.ErrorHelpers
+      import DistilleryPhoenixWeb.Gettext
+      alias DistilleryPhoenixWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -53,7 +53,7 @@ defmodule DistilleryConfigurationWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import DistilleryConfigurationWeb.Gettext
+      import DistilleryPhoenixWeb.Gettext
     end
   end
 

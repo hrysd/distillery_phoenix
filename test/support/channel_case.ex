@@ -1,4 +1,4 @@
-defmodule DistilleryConfigurationWeb.ChannelCase do
+defmodule DistilleryPhoenixWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -21,15 +21,15 @@ defmodule DistilleryConfigurationWeb.ChannelCase do
       use Phoenix.ChannelTest
 
       # The default endpoint for testing
-      @endpoint DistilleryConfigurationWeb.Endpoint
+      @endpoint DistilleryPhoenixWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(DistilleryConfiguration.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(DistilleryPhoenix.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(DistilleryConfiguration.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(DistilleryPhoenix.Repo, {:shared, self()})
     end
 
     :ok

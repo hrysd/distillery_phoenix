@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :distillery_configuration,
-  ecto_repos: [DistilleryConfiguration.Repo]
+config :distillery_phoenix,
+  ecto_repos: [DistilleryPhoenix.Repo]
 
 # Configures the endpoint
-config :distillery_configuration, DistilleryConfigurationWeb.Endpoint,
+config :distillery_phoenix, DistilleryPhoenixWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "r/PofFHAxpCsXtT2AsPfjPQWW/H/g+SrwNYPoMo2Iud/28x+AxS2RcuSuA5zfJ3l",
-  render_errors: [view: DistilleryConfigurationWeb.ErrorView, accepts: ~w(json)],
-  pubsub: [name: DistilleryConfiguration.PubSub, adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: DistilleryPhoenixWeb.ErrorView, accepts: ~w(json)],
+  pubsub: [name: DistilleryPhoenix.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

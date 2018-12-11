@@ -1,4 +1,4 @@
-defmodule DistilleryConfiguration.Application do
+defmodule DistilleryPhoenix.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,23 +9,23 @@ defmodule DistilleryConfiguration.Application do
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
-      DistilleryConfiguration.Repo,
+      DistilleryPhoenix.Repo,
       # Start the endpoint when the application starts
-      DistilleryConfigurationWeb.Endpoint
-      # Starts a worker by calling: DistilleryConfiguration.Worker.start_link(arg)
-      # {DistilleryConfiguration.Worker, arg},
+      DistilleryPhoenixWeb.Endpoint
+      # Starts a worker by calling: DistilleryPhoenix.Worker.start_link(arg)
+      # {DistilleryPhoenix.Worker, arg},
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: DistilleryConfiguration.Supervisor]
+    opts = [strategy: :one_for_one, name: DistilleryPhoenix.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    DistilleryConfigurationWeb.Endpoint.config_change(changed, removed)
+    DistilleryPhoenixWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

@@ -1,7 +1,7 @@
-defmodule DistilleryConfigurationWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :distillery_configuration
+defmodule DistilleryPhoenixWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :distillery_phoenix
 
-  socket "/socket", DistilleryConfigurationWeb.UserSocket,
+  socket "/socket", DistilleryPhoenixWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -11,7 +11,7 @@ defmodule DistilleryConfigurationWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :distillery_configuration,
+    from: :distillery_phoenix,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -37,8 +37,8 @@ defmodule DistilleryConfigurationWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_distillery_configuration_key",
+    key: "_distillery_phoenix_key",
     signing_salt: "oBYLA8Xe"
 
-  plug DistilleryConfigurationWeb.Router
+  plug DistilleryPhoenixWeb.Router
 end

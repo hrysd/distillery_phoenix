@@ -1,5 +1,5 @@
-defmodule DistilleryConfigurationWeb.ErrorView do
-  use DistilleryConfigurationWeb, :view
+defmodule DistilleryPhoenixWeb.ErrorView do
+  use DistilleryPhoenixWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

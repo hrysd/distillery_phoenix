@@ -54,8 +54,8 @@ end
 # when running `mix release`, the first release in the file
 # will be used by default
 
-release :distillery_configuration do
-  set version: current_version(:distillery_configuration)
+release :distillery_phoenix do
+  set version: current_version(:distillery_phoenix)
   set applications: [
     :runtime_tools
   ]

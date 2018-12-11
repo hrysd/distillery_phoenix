@@ -1,4 +1,4 @@
-defmodule DistilleryConfigurationWeb.ErrorHelpers do
+defmodule DistilleryPhoenixWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -25,9 +25,9 @@ defmodule DistilleryConfigurationWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(DistilleryConfigurationWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(DistilleryPhoenixWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(DistilleryConfigurationWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(DistilleryPhoenixWeb.Gettext, "errors", msg, opts)
     end
   end
 end
