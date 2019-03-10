@@ -52,5 +52,6 @@ config :distillery_phoenix, DistilleryPhoenix.Repo,
   username: "postgres",
   password: "",
   database: "distillery_phoenix_dev",
-  hostname: "localhost",
+  hostname: "127.0.0.1",
+  port: 15432,
   pool_size: 10

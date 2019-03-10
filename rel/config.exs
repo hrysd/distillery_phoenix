@@ -47,6 +47,12 @@ environment :prod do
   set overlays: [
     {:copy, "rel/config/config.exs", "etc/config.exs"}
   ]
+
+  set commands: [
+    create_database: "rel/commands/create_database.sh",
+    migrate: "rel/commands/migrate.sh",
+    seed: "rel/commands/seed.sh"
+  ]
 end
 
 # You may define one or more releases in this file.
