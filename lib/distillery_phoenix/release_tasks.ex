@@ -29,7 +29,7 @@ defmodule DistilleryPhoenix.ReleaseTasks do
     start_application()
     start_repo()
 
-    seed_file_path() |> IO.inspect |> Code.eval_file()
+    seed_file_path() |> Code.eval_file()
 
     stop_application()
   end
@@ -52,6 +52,6 @@ defmodule DistilleryPhoenix.ReleaseTasks do
   defp seed_file_path, do: priv_path_for("seeds.exs")
 
   defp priv_path_for(path) do
-    Path.join([:code.priv_dir(otp_app()), "repo", path]) |> IO.inspect
+    Path.join([:code.priv_dir(otp_app()), "repo", path])
   end
 end
